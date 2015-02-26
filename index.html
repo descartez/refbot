@@ -3,30 +3,40 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body ng-controller = 'MainCtrl as ctrl'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/refbot.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body ng-controller = 'MainCtrl as ctrl'>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+            <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>{{ctrl.testMessage}}</p>
+            <!-- Add your site or application content here -->
+            <div class='header'>
+                <h1>RefBot</h1>
+                <p>hello. my name is refbot. feed me links and i display.</p>
+            </div>
+            <div class='row'>
+                <div class='references' ng-repeat='ref in ctrl.references'>
+                    <img class='col-md-{{ref.size}}'ng-src="{{ref.url}}"/>
+                </div>
+            </div>
 
 
-        <script src="js/plugins.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js" ></script>
-        <script src="js/main.js"></script>
-    </body>
-</html>
+            <script src="js/plugins.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js" ></script>
+            <script src="js/main.js"></script>
+        </body>
+        </html>
