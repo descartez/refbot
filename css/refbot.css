@@ -2,13 +2,21 @@ body {
   background: #ADADAD;
 }
 
-img {
-  width: 100%;
-  border-radius: 15px;
-  padding: 2%;
+#logo {
+  float: left;
 }
 
 .header {
-  font-family: 'Krungthep';
+  font-family: 'Arial';
+  margin: 2%;
   text-align: center;
 }
+
+.references img {
+  width: 100%;
+}
+
+.references {
+  margin: 1%;
+}
+
