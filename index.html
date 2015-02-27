@@ -27,7 +27,7 @@
             <div class='header'>
                 <h1>RefBot</h1>
                 <p>hello! my name is refbot. feed me links and i display.</p>
-                <form ng-submit="ctrl.addRef()">
+                <form ng-submit="ctrl.addRef(url, size)">
                     Enter url and hit enter:
                   <input type="text" ng-model="url " name="url" placeholder='url'> </input>
                   <input type="text" ng-model="size" name="size" placeholder='size'> </input>

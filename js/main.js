@@ -5,10 +5,10 @@ app.controller('MainCtrl', [function() {
   var self = this
   self.references = [];
   self.testMessage = 'LOADED'
-  var addRef = function() {
+  self.addRef = function(url, size) {
     console.log('ctrl got here');
-    // var added = {url: url, size: size};
-    // console.log('loaded: ' + added);
-    // self.references.push(added);
+    var added = {url: url, size: size};
+    console.log('loaded: ' + added);
+    self.references.push(added.size);
   };
 }]);
