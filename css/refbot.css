@@ -1,0 +1,22 @@
+body {
+  background: #ADADAD;
+}
+
+#logo {
+  float: left;
+}
+
+.header {
+  font-family: 'Arial';
+  margin: 2%;
+  text-align: center;
+}
+
+.references img {
+  width: 100%;
+}
+
+.references {
+  margin: 1%;
+}
+

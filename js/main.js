@@ -1,8 +1,14 @@
-var app = angular.module('refApp', [])
+var app = angular.module('refApp', []);
 
-app.module('MainCtrl', [function() {
-  this.references = [];
-  var addRef = function(title, url, size) {
-    references.push(title: title, url: url, size: size);
+app.controller('MainCtrl', [function() {
+  var self = this
+  self.references = [];
+  self.columns = 12
+  // self.added = {};
+  self.addRef = function(url, size) {
+    var added = {url: url, size: size};
+    self.references.push(added);
+    self.columns -= size;
+    console.log(self.columns)
   };
 }]);
