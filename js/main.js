@@ -19,6 +19,7 @@ app.controller('MainCtrl', [function() {
       if(!!pattern.test(url)) {
         url = "http://" + url;
       };
+      // now it won't work UNLESS http is gone
       return url;
     }
 
