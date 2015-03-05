@@ -3,20 +3,26 @@ body {
 }
 
 #logo {
-  float: left;
+  width: 8%;
+}
+
+#title {
+  /*float: right;*/
 }
 
 .header {
   font-family: 'Arial';
-  margin: 2%;
   text-align: center;
+  background-color: white;
+  padding: 2%;
+  background-image: url("../img/refbot-small.png");
+  background-repeat: no-repeat;
+  background-position: 35%;
 }
 
-.references img {
-  width: 100%;
-}
-
-.references {
-  margin: 1%;
+.refs img {
+  width: 10%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 

@@ -14,8 +14,8 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/refbot.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body ng-controller = 'MainCtrl as ctrl'>
@@ -25,19 +25,18 @@
 
             <!-- Add your site or application content here -->
             <div class='header'>
-                <img class='logo' src="img/refbot-small.png">
-                <h1>RefBot</h1>
+                <h1 id='title'>RefBot</h1>
                 <p>hello! my name is refbot. feed me links and i display.</p>
-                <form ng-submit="ctrl.addRef(url, size)">
+                <form class='row' ng-submit="ctrl.addRef(url, size)">
                     Enter url and hit enter:
-                  <input type="text" ng-model="url " name="url" placeholder='url'> </input>
-                  <input type="text" ng-model="size" name="size" placeholder='size'> </input>
-                  <input type="submit" id="submit" value="Submit"> </input>
+                  <input type="text" ng-model="url " name="url" placeholder='url'></input>
+                  <input type="text" ng-model="size" name="size" placeholder='size'></input>
+                  <input type="submit" id="submit" value="Submit"></input>
               </form>
           </div>
           <div class='row'>
-            <div class='references' ng-repeat='ref in ctrl.references'>
-                <img class='col-md-{{ref.size}}'ng-src="{{ref.url}}"/>
+            <div ng-repeat='ref in ctrl.references'>
+                <img class='refs col-md-{{ref.size}}' ng-src="{{ref.url}}"></img>
             </div>
         </div>
 
