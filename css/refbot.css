@@ -17,6 +17,7 @@ body {
   padding: 2%;
   background-image: url("../img/refbot-small.png");
   background-repeat: no-repeat;
+  background-position: 35%;
 }
 
 .refs img {
