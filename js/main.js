@@ -16,11 +16,12 @@ app.controller('MainCtrl', [function() {
     //checks if pattern is present
     // if not, adds on http to url
       // what if https needed? error handling?
-      var pattern = /^(http?:\/\/)?/
+      var pattern = /^(f|ht)tps?:\/\//i;
       if(!pattern.test(urlToTest)) {
+        console.log('http not present');
         urlToTest = "http://" + urlToTest;
       };
-      return urlToTest
+      return urlToTest;
     };
 
   }]);
