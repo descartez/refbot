@@ -5,7 +5,7 @@ app.controller('MainCtrl', [function() {
   self.references = [];
   // self.columns = 12
   self.addRef = function(urlToPass, size) {
-    var added = {url: urlChecker(urlToPass), size: size};
+    var added = {url: urlChecker(urlToPass), size: imgSizer(size)};
     console.log(added);
     self.references.push(added);
     // self.columns -= size;
