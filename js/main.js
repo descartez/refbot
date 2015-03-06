@@ -18,10 +18,13 @@ app.controller('MainCtrl', [function() {
       // what if https needed? error handling?
       var pattern = /^(f|ht)tps?:\/\//i;
       if(!pattern.test(urlToTest)) {
-        console.log('http not present');
         urlToTest = "http://" + urlToTest;
       };
       return urlToTest;
     };
+
+  var removeImage = function(index) {
+    self.references[index].delete();
+  };
 
   }]);
