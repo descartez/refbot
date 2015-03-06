@@ -27,4 +27,16 @@ app.controller('MainCtrl', [function() {
 
   };
 
+  var imgSizer = function(size) {
+    if (size === 'small') {
+      return 2;
+    } else if (size === 'medium') {
+      return 3
+    } else if (size === 'large') {
+      return 6
+    } else if (size === 'x-large') {
+      return 12
+    }
+  };
+
   }]);
