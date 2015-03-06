@@ -23,8 +23,8 @@ app.controller('MainCtrl', [function() {
       return urlToTest;
     };
 
-  var removeImage = function(index) {
-    self.references[index].delete();
+  var removeImage = function(object) {
+
   };
 
   }]);
