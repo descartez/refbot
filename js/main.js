@@ -28,6 +28,7 @@ app.controller('MainCtrl', [function() {
   };
 
   var imgSizer = function(size) {
+    //checks if the
     if (size === 'small') {
       return 2;
     } else if (size === 'medium') {
