@@ -42,7 +42,9 @@
           <div class='row'>
             <div ng-repeat='ref in ctrl.references'>
                 <img class='refs col-md-{{ref.size}}' ng-src="{{ref.url}}"></img>
+            <div class='row'>
                 <a class="btn" ng-click="removeImage({{ref.url}})">X</a>
+            </div>
             </div>
         </div>
 
