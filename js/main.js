@@ -13,9 +13,9 @@ app.controller('MainCtrl', [function() {
   };
 
   self.changeSize = function(object, amount) {
-    if (object['size'] > 1 && object['size'] < 12) {
+    if (object['size'] > 0 && object['size'] < 13) {
         object['size'] += amount;
-    } else if (object['size'] >= 12) {
+    } else if (object['size'] > 12) {
       object['size'] = 12
     } else {
       object['size'] = 1
