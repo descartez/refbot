@@ -12,6 +12,10 @@ app.controller('MainCtrl', [function() {
     // console.log(self.columns)
   };
 
+  self.changeSize(object, amount) {
+    object[size] += amount;
+  }
+
   var urlChecker = function(urlToTest) {
     //checks if pattern is present
     // if not, adds on http to url
@@ -22,6 +26,7 @@ app.controller('MainCtrl', [function() {
       };
       return urlToTest;
     };
+
 
   var imgSizer = function(size) {
     if (size === 'small') {

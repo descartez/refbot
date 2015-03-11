@@ -43,6 +43,9 @@
                 <div ng-repeat='ref in ctrl.references'>
                     <div class=''>
                         <img class='refs col-md-{{ref.size}}' ng-src="{{ref.url}}"></img>
+                        <br>
+                        <button ng-click="ref.changeSize(ref, 1)">+</button>
+                        <button ng-click="ref.changeSize(ref, -1)">-</button>
                         <button ng-click="ctrl.references.splice($index,1)">X</button>
                     </div>
                 </div>
