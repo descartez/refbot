@@ -5,7 +5,7 @@ app.controller('MainCtrl', [function() {
   self.references = [];
   // self.columns = 12
   self.addRef = function(urlToPass, size) {
-    var added = {url: urlChecker(urlToPass), size: size};
+    var added = {url: urlChecker(urlToPass), size: imgSizer(size)};
     console.log(added);
     self.references.push(added);
     // self.columns -= size;
@@ -23,8 +23,16 @@ app.controller('MainCtrl', [function() {
       return urlToTest;
     };
 
-  var removeImage = function(index) {
-    self.references[index].delete();
+  var imgSizer = function(size) {
+    if (size === 'small') {
+      return 2;
+    } else if (size === 'medium') {
+      return 3
+    } else if (size === 'large') {
+      return 6
+    } else if (size === 'x-large') {
+      return 12
+    }
   };
 
   }]);
