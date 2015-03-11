@@ -12,9 +12,9 @@ app.controller('MainCtrl', [function() {
     // console.log(self.columns)
   };
 
-  self.changeSize(object, amount) {
-    object[size] += amount;
-  }
+  self.changeSize = function(object, amount) {
+    object['size'] += amount;
+  };
 
   var urlChecker = function(urlToTest) {
     //checks if pattern is present
