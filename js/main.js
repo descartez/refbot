@@ -13,7 +13,14 @@ app.controller('MainCtrl', [function() {
   };
 
   self.changeSize = function(object, amount) {
-    object['size'] += amount;
+    if (object['size'] > 1 && object['size'] < 12) {
+        object['size'] += amount;
+    } else if (object['size'] >= 12) {
+      object['size'] = 12
+    } else {
+      object['size'] = 1
+    }
+    console.log(object['size'])
   };
 
   var urlChecker = function(urlToTest) {
