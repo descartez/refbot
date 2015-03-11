@@ -23,10 +23,6 @@ app.controller('MainCtrl', [function() {
       return urlToTest;
     };
 
-  var removeImage = function(object) {
-
-  };
-
   var imgSizer = function(size) {
     if (size === 'small') {
       return 2;

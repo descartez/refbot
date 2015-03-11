@@ -41,9 +41,9 @@
             </div>
             <div class='row'>
                 <div ng-repeat='ref in ctrl.references'>
-                    <div class='col-md-{{ref.size}}'>
-                        <img class='refs' ng-src="{{ref.url}}"></img>
-                        <a class="btn" ng-click="removeImage({{ref.url}})">X</a>
+                    <div class=''>
+                        <img class='refs col-md-{{ref.size}}' ng-src="{{ref.url}}"></img>
+                        <button ng-click="ctrl.references.splice($index,1)">X</button>
                     </div>
                 </div>
             </div>
