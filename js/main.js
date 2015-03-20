@@ -3,18 +3,21 @@ var app = angular.module('refApp', []);
 app.controller('MainCtrl', [function() {
   var self = this
   self.references = [];
-  // self.columns = 12
   self.addRef = function(urlToPass, size) {
     var added = {url: urlChecker(urlToPass), size: imgSizer(size)};
     console.log(added);
     self.references.push(added);
-    // self.columns -= size;
-    // console.log(self.columns)
   };
 
-  self.changeSize(object, amount) {
-    object[size] += amount;
-  }
+  self.changeSize = function(object, amount) {
+    if ((object['size'] + amount) > 12) {
+      object['size'] = 12;
+    } else if ((object['size'] + amount) < 1) {
+      object['size'] = 1;
+    } else {
+      object['size'] += amount;
+    }
+  };
 
   var urlChecker = function(urlToTest) {
     //checks if pattern is present
