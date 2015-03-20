@@ -3,24 +3,20 @@ var app = angular.module('refApp', []);
 app.controller('MainCtrl', [function() {
   var self = this
   self.references = [];
-  // self.columns = 12
   self.addRef = function(urlToPass, size) {
     var added = {url: urlChecker(urlToPass), size: imgSizer(size)};
     console.log(added);
     self.references.push(added);
-    // self.columns -= size;
-    // console.log(self.columns)
   };
 
   self.changeSize = function(object, amount) {
-    if (object['size'] > 0 && object['size'] < 13) {
-        object['size'] += amount;
-    } else if (object['size'] > 12) {
-      object['size'] = 12
+    if ((object['size'] + amount) > 12) {
+      object['size'] = 12;
+    } else if ((object['size'] + amount) < 1) {
+      object['size'] = 1;
     } else {
-      object['size'] = 1
+      object['size'] += amount;
     }
-    console.log(object['size'])
   };
 
   var urlChecker = function(urlToTest) {
