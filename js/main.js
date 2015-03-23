@@ -32,7 +32,9 @@ app.controller('MainCtrl', [function() {
 
 
   var imgSizer = function(size) {
-    if (size === 'small') {
+    if (size === undefined) {
+      return 2
+    } else if (size === 'small') {
       return 2;
     } else if (size === 'medium') {
       return 3

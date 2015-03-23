@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/refbot.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body ng-controller = 'MainCtrl as ctrl'>
+<body class='container' ng-controller = 'MainCtrl as ctrl'>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
@@ -36,24 +36,35 @@
                         <option value='large'>large</option>
                         <option value='x-large'>extra large</option>
                     </select>
-                    <input type="submit" id="submit" value="Submit"></input>
+                    <input class='btn btn-primary'type="submit" id="submit" value="Submit"></input>
                 </form>
             </div>
             <div class='row'>
                 <div ng-repeat='ref in ctrl.references'>
-                    <div class=''>
-                        <img class='refs col-md-{{ref.size}}' ng-src="{{ref.url}}"></img>
+                    <div class='card'>
+                        <img class='col-md-{{ref.size}} col-sm-{{ref.size}} col-xs-{{ref.size}}' ng-src="{{ref.url}}"></img>
                         <br>
-                        <button ng-click="ctrl.changeSize(ref, 1)">+</button>
-                        <button ng-click="ctrl.changeSize(ref,-1)">-</button>
-                        <button ng-click="ctrl.references.splice($index,1)">X</button>
+                        <br>
+                        <div class='buttons'>
+                            <ul>
+                                <li>
+                                    <button class='btn' ng-click="ctrl.changeSize(ref, 1)">+</button>
+                                </li>
+                                <li>
+                                    <button class='btn' ng-click="ctrl.changeSize(ref,-1)">-</button>
+                                </li>
+                                <li>
+                                    <button class='btn' ng-click="ctrl.references.splice($index,1)">X</button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
 
             <script src="js/plugins.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js" ></script>
+            <script src="js/vendor/angular.js" ></script>
             <script src="js/main.js"></script>
         </body>
         </html>
