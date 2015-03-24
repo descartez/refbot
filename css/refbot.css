@@ -11,13 +11,26 @@ body {
 }
 
 .header {
-  font-family: 'Arial';
+  font-family: 'Krungthep';
   text-align: center;
   background-color: white;
   padding: 2%;
   background-image: url("../img/refbot-small.png");
   background-repeat: no-repeat;
-  background-position: 35%;
+  background-position: 20%;
+  border-radius: 5px;
+}
+
+.header h2 {
+  float: left;
+}
+
+.header p {
+  /*margin-top: 40px;*/
+}
+
+.header span {
+  background-color: white;
 }
 
 .refs img {
