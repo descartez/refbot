@@ -21,9 +21,10 @@ body {
 }
 
 .refs img {
-  width: 100%;
+  width: 80%;
   padding-left: 0px;
   padding-right: 0px;
+  /*position: relative;*/
 }
 
 .refs {
@@ -31,13 +32,13 @@ body {
   padding: 5px;
 }
 
-.buttons li {
-  font-size: 2em;
+.buttons {
   list-style: none;
   display: block;
   margin: 2px;
-}
-
-button {
-  background-color: white;
+  float: left;
+  background-color: #fff;
+  /*position: absolute;*/
+  /*top: 200px;*/
+  border-radius: 15px;
 }

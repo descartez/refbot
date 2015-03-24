@@ -1,7 +1,7 @@
 <html ng-app='refApp'>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app='refApp'> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app='refApp'> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app='refApp'> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
@@ -26,8 +26,8 @@
             <!-- Add your site or application content here -->
             <div class='header'>
                 <h1 id='title'>RefBot</h1>
-                <p>hello! my name is refbot. feed me links and i display.</p>
-                <form class='row' ng-submit="ctrl.addRef(url, size)">
+                <p>hello! my name is refbot. feed me image urls and i display.</p>
+                <form class='row ' ng-submit="ctrl.addRef(url, size)">
                     Enter url and hit enter:
                     <input type="text" ng-model="url " name="url" placeholder='url'></input>
                     <select type="text" ng-model="size" name="size" placeholder='size'>
@@ -41,22 +41,13 @@
             </div>
             <div class='row'>
                 <div ng-repeat='ref in ctrl.references'>
-                    <div class='card'>
+                    <div class='card refs col-md-{{ref.size}} col-sm-{{ref.size}} col-xs-{{ref.size}}'>
                         <img class='col-md-{{ref.size}} col-sm-{{ref.size}} col-xs-{{ref.size}}' ng-src="{{ref.url}}"></img>
                         <br>
-                        <br>
                         <div class='buttons'>
-                            <ul>
-                                <li>
-                                    <button class='btn' ng-click="ctrl.changeSize(ref, 1)">+</button>
-                                </li>
-                                <li>
-                                    <button class='btn' ng-click="ctrl.changeSize(ref,-1)">-</button>
-                                </li>
-                                <li>
-                                    <button class='btn' ng-click="ctrl.references.splice($index,1)">X</button>
-                                </li>
-                            </ul>
+                                    <a class='btn' ng-click="ctrl.changeSize(ref, 1)">+</a>
+                                    <a class='btn' ng-click="ctrl.changeSize(ref,-1)">-</a>
+                                    <a class='btn' ng-click="ctrl.references.splice($index,1)">x</a>
                         </div>
                     </div>
                 </div>
