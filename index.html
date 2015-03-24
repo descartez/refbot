@@ -42,13 +42,13 @@
             <div class='all-refs'>
                 <div ng-repeat='ref in ctrl.references'>
                     <div class='card refs col-md-{{ref.size}} col-sm-{{ref.size}} col-xs-{{ref.size}}'>
-                        <img class='col-md-{{ref.size}} col-sm-{{ref.size}} col-xs-{{ref.size}}' ng-src="{{ref.url}}"></img>
-                        <br>
                         <div class='buttons'>
                                     <a class='btn' ng-click="ctrl.changeSize(ref, 1)">+</a>
                                     <a class='btn' ng-click="ctrl.changeSize(ref,-1)">-</a>
                                     <a class='btn' ng-click="ctrl.references.splice($index,1)">x</a>
                         </div>
+                        <br>
+                        <img class='col-md-{{ref.size}} col-sm-{{ref.size}} col-xs-{{ref.size}}' ng-src="{{ref.url}}"></img>
                     </div>
                 </div>
             </div>
