@@ -3,7 +3,7 @@ class CreateBoards < ActiveRecord::Migration
     create_table :boards do |t|
       t.string :name
       t.string :link
-      t.text :tiles
+
 
       t.timestamps
     end

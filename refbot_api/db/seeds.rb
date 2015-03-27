@@ -6,5 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 10.times do
-  board = Board.create(name: Faker::Name.first_name, link: Faker::Name.first_name, tiles: "[{url: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg', size: #{rand(1..12)}},{url: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg', size: #{rand(1..12)}},{url: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg', size: #{rand(1..12)}}]")
+  # tiles =
+
+  board = Board.create(name: Faker::Name.first_name, link: Faker::Name.first_name)
+
+  5.times do
+    tile = Tile.new(url: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg', size: rand(1..12))
+    board.tiles << tile
+  end
+
 end
