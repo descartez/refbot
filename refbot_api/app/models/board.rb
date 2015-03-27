@@ -1,9 +1,14 @@
 class Board < ActiveRecord::Base
-  has_many :tiles
+  has_many :tiles, dependent: :destroy
 
-  # def link
-  #   return "#{Faker::Lorem.word}-#{Faker::Hacker.verb}-#{Faker::Number.number(6)}"
-  # end
+  def create_extension
+    self.extension = create_extension_name
+    self.save!
+  end
+
+  def create_extension_name
+    return "#{Faker::Lorem.word}-#{Faker::Hacker.verb}-#{Faker::Number.number(6)}"
+  end
 
 
 end
