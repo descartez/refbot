@@ -1,7 +1,7 @@
 var app = angular.module('refApp', []);
 
 app.controller('MainCtrl', [function() {
-  var self = this
+  var self = this;
   self.references = [];
   self.addRef = function(urlToPass, size) {
     var added = {url: urlChecker(urlToPass), size: imgSizer(size)};

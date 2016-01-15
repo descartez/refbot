@@ -1,0 +1,24 @@
+<html ng-app='refApp'>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app='refApp'> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app='refApp'> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9" ng-app='refApp'> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ref Bot</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/application.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body class='container' ng-controller = 'MainCtrl as ctrl'>
+    <%= yield %>
+    <script src="js/vendor/angular.js" ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
