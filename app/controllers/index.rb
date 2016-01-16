@@ -3,6 +3,10 @@ get '/' do
   erb :index
 end
 
+get '/test' do
+  'wat'
+end
+
 get '/boards/:id' do
   #gets particular board. MUST TURN DATA INTO JSON OBJECT
 end
