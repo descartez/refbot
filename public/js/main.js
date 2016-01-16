@@ -11,7 +11,7 @@ app.controller('MainCtrl', ["$http", function($http) {
           }).then(function successCallback(response) {
             console.log(response)
             for (var index = 0; index < response.data.length; index++) {
-            self.references.push(response.data[index].tile);
+            self.addRef(response.data[index].tile.url, response.data[index].tile.size);
           }
             }, function errorCallback(response) {
               console.log('board ' + boardId + ' not found');
