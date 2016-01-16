@@ -112,6 +112,13 @@ namespace :db do
     require APP_ROOT.join('db', 'seeds.rb')
   end
 
+  desc "Drops, recreates, and remigrates whole database"
+  task :recreate => [ :drop, :create, :migrate ] do
+      if ENV[ 'RAILS_ENV' ] !~ /test|cucumber/
+         Rake::Task[ 'db:seed' ].invoke
+      end
+   end
+
   desc "Returns the current schema version number"
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
