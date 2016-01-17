@@ -5,11 +5,20 @@
             <form class='row url-form' ng-submit="ctrl.addRef(url, size)">
                 <input type="text" class="form-control" ng-model="url" name="url" placeholder='url'></input>
                 <div class='url-form-buttons'>
+                    <p>Since this uses the Bootstrap Grid, select a number out of 12</p>
                     <select type="text" ng-model="size" name="size" placeholder='size'>
-                        <option value='small'>small</option>
-                        <option value='medium'>medium</option>
-                        <option value='large'>large</option>
-                        <option value='x-large'>extra large</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                        <option value='6'>6</option>
+                        <option value='7'>7</option>
+                        <option value='8'>8</option>
+                        <option value='9'>9</option>
+                        <option value='10'>10</option>
+                        <option value='11'>11</option>
+                        <option value='12'>12</option>
                     </select>
                     <input class='btn btn-primary'type="submit" id="submit" value="Submit"></input>
                 </div>

@@ -11,7 +11,9 @@ app.controller('MainCtrl', ["$http", function($http) {
           }).then(function successCallback(response) {
             console.log(response)
             for (var index = 0; index < response.data.length; index++) {
-            self.addRef(response.data[index].tile.url, response.data[index].tile.size);
+            var tileUrl = response.data[index].tile.url
+            console.log("tile size: " + response.data[index].tile.size)
+            self.addRef(tileUrl, response.data[index].tile.size);
           }
             }, function errorCallback(response) {
               console.log('board ' + boardId + ' not found');
@@ -21,7 +23,7 @@ app.controller('MainCtrl', ["$http", function($http) {
 
 
         self.addRef = function(urlToPass, size) {
-          var added = {url: urlChecker(urlToPass), size: imgSizer(size)};
+          var added = {url: urlChecker(urlToPass), size: size};
           console.log(added);
           self.references.push(added);
           };
