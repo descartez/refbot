@@ -7,18 +7,14 @@ get '/test' do
   'wat'
 end
 
-get '/boards' do
-  #gets first board. for testing purposes
-  @board = Board.first
-  @tiles = @board.tiles
-  # @board.to_json
-  @tiles.to_json
-end
-
 get '/boards/:id' do
   #gets particular board. MUST TURN DATA INTO JSON OBJECT
-  board = Board.first
-  return board
+  board = Board.find(params[:id])
+  board_title = board.title
+  tiles = board.tiles
+
+  response = {title: board_title, tiles: tiles}
+  response.to_json
 end
 
 put '/boards/:id' do

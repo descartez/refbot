@@ -26,6 +26,11 @@ body {
   background-color: #BDBDBD;
 }
 
+#board-title {
+  text-align: center;
+  color: red;
+}
+
 .url-form {
   padding-top: 20px;
 }

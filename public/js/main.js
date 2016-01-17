@@ -1,67 +1,63 @@
 var app = angular.module('refApp', []);
 
-app.controller('MainCtrl', ["$http", function($http) {
-      var self = this;
-      self.references = [];
+app.controller('MainCtrl', ["$http",
+    function($http) {
+        var self = this;
+        self.boardTitle = ""
+        self.boardReferences = [];
 
-      self.getBoard = function (boardId) {
-        $http({
-          method: 'GET',
-          url: '/boards'
-          }).then(function successCallback(response) {
-            console.log(response)
-            for (var index = 0; index < response.data.length; index++) {
-            var tileUrl = response.data[index].tile.url
-            console.log("tile size: " + response.data[index].tile.size)
-            self.addRef(tileUrl, response.data[index].tile.size);
-          }
+        self.getBoard = function(boardId) {
+            $http({
+                method: 'GET',
+                url: '/boards/' + boardId
+            }).then(function successCallback(response) {
+                console.log(response.data)
+                fullBoard = response.data
+                self.boardTitle = fullBoard.title
+
+                for (var index = 0; index < fullBoard.tiles.length; index++) {
+                    var tileUrl = fullBoard.tiles[index].tile.url
+                    var tileSize = fullBoard.tiles[index].tile.size
+
+                    self.addRef(tileUrl, tileSize);
+
+                }
             }, function errorCallback(response) {
-              console.log('board ' + boardId + ' not found');
-              console.log(response);
-              });
-          };
-
+                console.log('board ' + boardId + ' not found');
+                console.log(response);
+            });
+        };
 
         self.addRef = function(urlToPass, size) {
-          var added = {url: urlChecker(urlToPass), size: size};
-          console.log(added);
-          self.references.push(added);
-          };
+            var added = {
+                url: self.urlChecker(urlToPass),
+                size: parseInt(size)
+            };
+            console.log(added);
+            self.boardReferences.push(added);
+        };
 
-          self.changeSize = function(object, amount) {
+        self.changeSize = function(object, amount) {
             if ((object['size'] + amount) > 12) {
-              object['size'] = 12;
-              } else if ((object['size'] + amount) < 2) {
+                object['size'] = 12;
+            } else if ((object['size'] + amount) < 2) {
                 object['size'] = 2;
-                } else {
-                  object['size'] += amount;
-                }
-                };
+            } else {
+                object['size'] += amount;
+            }
+        };
 
-                var urlChecker = function(urlToTest) {
-                  //checks if pattern is present
-                  // if not, adds on http to url
-                    // what if https needed? error handling?
-                    var pattern = /^(f|ht)tps?:\/\//i;
-                    if(!pattern.test(urlToTest)) {
-                      urlToTest = "http://" + urlToTest;
-                      };
-                      return urlToTest;
-                      };
+        self.urlChecker = function(urlToTest) {
+            //checks if pattern is present
+            // if not, adds on http to url
+            // what if https needed? error handling?
+            var pattern = /^(f|ht)tps?:\/\//i;
+            if (!pattern.test(urlToTest)) {
+                urlToTest = "http://" + urlToTest;
+            };
+            return urlToTest;
+        };
 
 
-                      var imgSizer = function(size) {
-                        if (size === undefined) {
-                          return 2;
-                          } else if (size === 'small') {
-                            return 2;
-                            } else if (size === 'medium') {
-                              return 3
-                              } else if (size === 'large') {
-                                return 6
-                                } else if (size === 'x-large') {
-                                  return 12
-                                }
-                                };
-
-                                }]);
+    }
+]);
