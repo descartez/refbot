@@ -3,6 +3,7 @@ body {
 }
 
 #header {
+  margin-top: 15px;
   font-family: 'Krungthep';
   text-align: center;
   background-color: #BDBDBD;
@@ -26,11 +27,6 @@ body {
   background-color: #BDBDBD;
 }
 
-#board-title {
-  text-align: center;
-  color: red;
-}
-
 .url-form {
   padding-top: 20px;
 }
@@ -52,10 +48,11 @@ body {
 .refs {
   padding-left: 0px;
   padding-right: 0px;
+  padding-bottom: 15px;
   margin: 10px;
   padding: 5px;
   background-color: #BDBDBD;
-  border-radius: 10px;
+  border-bottom-right-radius: 15px;
 }
 
 .buttons {
@@ -70,7 +67,7 @@ body {
 
 .buttons a {
   opacity: 0.6;
-  margin: 2px;
+  /*margin: 2px;*/
   background-color: #292828;
   color: white;
 }
